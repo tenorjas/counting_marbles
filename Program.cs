@@ -32,7 +32,33 @@ namespace counting_marbles
         static void Main(string[] args)
         {
             var marbleBag = new MarbleBag();
+            marbleBag.Reds = 3;
+            marbleBag.Greens = 1;
+            marbleBag.Blues = 2;
 
+            marbleBag.PrintInfo();
+
+            marbleBag.Blues = 5;
+
+            if (marbleBag.GetTotalNumberOfMarbles() == 9)
+            {
+                Console.WriteLine("Total is 9, as expected.");
+            }
+            else
+            {
+                Console.WriteLine("PANIC!!!");
+            }
+
+            marbleBag.RemoveAllGreenMarbles();
+
+            if (marbleBag.GetTotalNumberOfMarbles() == 8)
+            {
+                Console.WriteLine("Total is 8, as expected.");
+            }
+            else
+            {
+                Console.WriteLine("Panic even more!");
+            }
         }
     }
 }
